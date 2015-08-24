@@ -19,9 +19,9 @@
 	pro = pull --rebase origin
 	po = push origin
         cp = cherry-pick
-    ri = !sh -c 'git rebase -i HEAD~$1' -
-    untrack = update-index --assume-unchanged
-    track = update-index --no-assume-unchanged
+        ri = !sh -c 'git rebase -i HEAD~$1' -
+        untrack = update-index --assume-unchanged
+        track = update-index --no-assume-unchanged
 [color]
 	ui = auto
 	interactive = auto
