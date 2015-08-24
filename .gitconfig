@@ -2,7 +2,6 @@
 	editor = subl -w
 	excludesfile = /opt/boxen/config/git/gitignore
 [user]
-	email = bderusha@dataxu.com
 	name = Bill DeRusha
 [alias]
 	s = status
