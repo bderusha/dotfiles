@@ -2,7 +2,6 @@
 	editor = subl -w
 	excludesfile = /opt/boxen/config/git/gitignore
 [user]
-	email = bderusha@dataxu.com
 	name = Bill DeRusha
 [alias]
 	s = status
@@ -19,9 +18,9 @@
 	pro = pull --rebase origin
 	po = push origin
         cp = cherry-pick
-    ri = !sh -c 'git rebase -i HEAD~$1' -
-    untrack = update-index --assume-unchanged
-    track = update-index --no-assume-unchanged
+        ri = !sh -c 'git rebase -i HEAD~$1' -
+        untrack = update-index --assume-unchanged
+        track = update-index --no-assume-unchanged
 [color]
 	ui = auto
 	interactive = auto
@@ -35,8 +34,6 @@
 [merge]
 	stat = true
 	tool = diffmerge
-[credential]
-	helper = /opt/boxen/bin/boxen-git-credential
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
