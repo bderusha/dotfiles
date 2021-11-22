@@ -1,0 +1,41 @@
+[core]
+	editor = vim
+[user]
+	name = Bill DeRusha
+	email = 444835+bderusha@users.noreply.github.com
+	signingkey = 0B57198F6B12DE99
+[alias]
+	s = status
+	a = !git add . && git status
+	au = !git add -u . && git status
+	aa = !git add . && git add -u . && git status
+	c = commit
+  ca = commit --amend
+  cane = commit --amend --no-edit
+	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+	d = diff --color-words
+	co = checkout
+	pro = pull --rebase origin
+	po = push origin
+  cp = cherry-pick
+  ri = !sh -c 'git rebase -i HEAD~$1' -
+  untrack = update-index --assume-unchanged
+  track = update-index --no-assume-unchanged
+[color]
+	ui = auto
+	interactive = auto
+[rerere]
+	enabled = true
+[push]
+	default = current
+[branch]
+  # always setup 'git pull' to rebase instead of merge
+  autosetuprebase = always
+[merge]
+	stat = true
+	tool = diffmerge
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
