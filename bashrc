@@ -120,3 +120,4 @@ fi
 
 export GPG_TTY=$(tty)
 source ~/dotfiles/gitstatus/gitstatus.prompt.sh
+source /home/bill/dotfiles/gitstatus/gitstatus.prompt.sh

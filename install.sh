@@ -24,6 +24,10 @@ echo "...done"
 
 mkdir -p ~/.oh-my-zsh/completions
 
+git clone --depth=1 https://github.com/romkatv/gitstatus.git ./gitstatus
+rm -rf $dir/gitstatus/.git
+echo "source $dir/gitstatus/gitstatus.prompt.sh" >> bashrc
+
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
