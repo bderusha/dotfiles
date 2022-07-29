@@ -24,9 +24,17 @@ echo "...done"
 
 mkdir -p ~/.oh-my-zsh/completions
 
-git clone --depth=1 https://github.com/romkatv/gitstatus.git ./gitstatus
-rm -rf $dir/gitstatus/.git
-echo "source $dir/gitstatus/gitstatus.prompt.sh" >> bashrc
+
+
+# Add gitstatus
+if [[ ! -d $dir/gitstatus ]]; then
+    git clone --depth=1 https://github.com/romkatv/gitstatus.git ./gitstatus
+    rm -rf $dir/gitstatus/.git
+fi
+
+if [[ "$(cat bashrc)" != *"gitstatus/gitstatus.prompt.sh"* ]]; then
+    echo "source $dir/gitstatus/gitstatus.prompt.sh" >> bashrc
+fi
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in $files; do
