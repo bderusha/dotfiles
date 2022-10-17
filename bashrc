@@ -119,4 +119,5 @@ if ! shopt -oq posix; then
 fi
 
 export GPG_TTY=$(tty)
+export PATH=$PATH:~/.local/bin
 source ~/dotfiles/gitstatus/gitstatus.prompt.sh
