@@ -1,0 +1,146 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Custom variables by lang/env
+[aws]
+symbol = "  "
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[azure]
+disabled = true
+
+[buf]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[c]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
+
+[conda]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[dart]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+
+[dotnet]
+format = '\[[$symbol(🎯 $tfm)]($style)\]'
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+format = '\[[$symbol$context]($style)\]'
+
+[elixir]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[elm]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[haskell]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[hg_branch]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[java]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[julia]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+
+[lua]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[memory_usage]
+symbol = " "
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[meson]
+symbol = "喝 "
+format = '\[[$symbol]($style)\]'
+
+[nim]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[nix_shell]
+symbol = " "
+format = '\[[$symbol$state( \($name\))]($style)\]'
+
+[nodejs]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[package]
+disabled = true
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[python]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[rlang]
+symbol = "ﳒ "
+format = '\[[$symbol]($style)\]'
+
+[ruby]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[rust]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[scala]
+symbol = " "
+format = '\[[$symbol]($style)\]'
+
+[spack]
+symbol = "🅢 "
+format = '\[[$symbol]($style)\]'
+
+[sudo]
+format = '\[[as $symbol]\]'
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
+
+[time]
+format = '\[[$time]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'

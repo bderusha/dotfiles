@@ -120,4 +120,8 @@ fi
 
 export GPG_TTY=$(tty)
 export PATH=$PATH:~/.local/bin
-source ~/dotfiles/gitstatus/gitstatus.prompt.sh
+export PATH=$PATH:~/.nix-profile/bin
+export STARSHIP_CONFIG=~/.starship
+
+
+eval "$(starship init bash)"
