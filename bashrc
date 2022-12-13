@@ -125,3 +125,5 @@ export STARSHIP_CONFIG=~/.starship
 
 
 eval "$(starship init bash)"
+
+neofetch
