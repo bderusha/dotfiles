@@ -6,93 +6,129 @@
   home.username = "bill";
   home.homeDirectory = "/home/bill";
   home.stateVersion = "22.11";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
-
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # programs.bash = {
-  #   enable = true;
-  #   enableCompletion = true;
-  # };
+  home.packages = with pkgs; [
+    cowsay
+    neofetch
+  ];
+
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+    shellAliases = {
+      ls = "ls --color=auto";
+      ll = "ls -l";
+      la = "ls -A";
+      l = "ls -CF";
+      ".." = "cd ..";
+      g = "git";
+      grep = "grep --color=auto";
+      egrep = "egrep --color=auto";
+      fgrep = "fgrep --color=auto";
+    };
+    initExtra = ''
+      ${pkgs.neofetch}/bin/neofetch
+    '';
+    historyIgnore = ["ls" "cd" "exit"];
+  };
 
   programs.git = {
     enable = true;
 
-    userName = "bderusha";
-    userEmail = "bderush+123456@github.com";
+    userName = "Bill DeRusha";
+    userEmail = "444835+bderusha@users.noreply.github.com";
+
+    signing = {
+      key = "0B57198F6B12DE99";
+      signByDefault = true;
+    };
+    
     aliases = {
+      s = "status";
+      a = "!git add . && git status";
+      au = "!git add -u . && git status";
+      aa = "!git add . && git add -u . && git status";
+      c = "commit";
+      ca = "commit --amend";
+      cane = "commit --amend --no-edit";
+      yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease";
+      l = "log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'";
+      lg = "log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative";
+      d = "diff --color-words";
+      co = "checkout";
       sw = "switch";
-      tmp = "checkout -b tmp0123";
-      tmp1 = "checkout -b tmp123";
-      tmp2 = "checkout -b tmp321";
-      tmp3 = "checkout -b tmp246";
+      pro = "pull --rebase origin";
+      po = "push origin";
+      cp = "cherry-pick";
+      ri = "!sh -c 'git rebase -i HEAD~$1' -";
+      untrack = "update-index --assume-unchanged";
+      track = "update-index --no-assume-unchanged";
+    };
+    # delta.enable = true;
+    difftastic = {
+      enable = true;
+    };
+
+    extraConfig = {
+      core = {
+        editor = "code --wait";
+        autocrlf = "input";
+      };
+      color = {
+        ui = "auto";
+        status = "auto";
+        branch = "auto";
+        interactive = "auto";
+        diff = "auto";
+      };
+      rerere.enabled = "true";
+      branch.autosetuprebase = "always";
+      push.default = "current";
     };
   };
 
   programs.starship = {
     enable = true;
+    enableBashIntegration = true;
     settings = {
       add_newline = false;
-      format = "$username$hostname$directory$git_branch$git_commit$git_state$git_status$cmd_duration$line_break$jobs$character";
-      username = {
-        style = "bold blue";
-        disabled = true;
-      };
-      hostname = {
-        style = "bold blue";
-        disabled = true;
+      scan_timeout = 10;
+      cmd_duration = {
+        format = "[⏱️ $duration]($style)";
+        min_time = 5000;
+        show_milliseconds = true;
       };
       directory = {
-        style = "bold blue";
-        disabled = false;
+        read_only = " ";
+        truncation_length = 8;
+        truncate_to_repo = true;
       };
       git_branch = {
-        style = "bold blue";
-        disabled = false;
-      };
-      git_commit = {
-        style = "bold blue";
-        disabled = false;
-      };
-      git_state = {
-        style = "bold blue";
-        disabled = false;
+        symbol = " ";
+        format = "[\\[$symbol$branch\\]]($style)";
       };
       git_status = {
-        style = "bold blue";
-        disabled = false;
+        format = "[\\[$all_status$ahead_behind\\]]($style)";
       };
-      cmd_duration = {
-        style = "bold blue";
-        disabled = false;
+      nix_shell = {
+        symbol = " ";
+        format = "[\\[$symbol$state( \\($name\\))]($style)\\]";
       };
-      line_break = {
-        style = "bold blue";
-        disabled = false;
+      python = {
+        symbol = " ";
+        format = "[\\[$symbol$version]($style)\\]";
       };
-      jobs = {
-        style = "bold blue";
-        disabled = false;
+      sudo = {
+        format = "[\\[as $symbol]\\]";
       };
-      character = {
-        style = "bold blue";
-        disabled = false;
+      time = {
+        format = "[\\[$time]($style)\\]";
       };
+      dotnet.disabled = true;
     };
   };
 
-  home.packages = with pkgs; [
-    cowsay
-  ];
 
   services.gpg-agent = {
     enable = true;
