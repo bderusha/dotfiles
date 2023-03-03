@@ -30,6 +30,9 @@
     initExtra = ''
       ${pkgs.neofetch}/bin/neofetch
     '';
+    profileExtra = ''
+      export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
+    '';
     historyIgnore = ["ls" "cd" "exit"];
   };
 
@@ -85,6 +88,7 @@
       rerere.enabled = "true";
       branch.autosetuprebase = "always";
       push.default = "current";
+      init.defaultBranch = "main";
     };
   };
 
