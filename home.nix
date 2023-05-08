@@ -29,6 +29,7 @@
     };
     initExtra = ''
       ${pkgs.neofetch}/bin/neofetch
+      export PATH=$PATH:~/.nix-profile/bin
     '';
     profileExtra = ''
       export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
@@ -43,8 +44,8 @@
     userEmail = "444835+bderusha@users.noreply.github.com";
 
     signing = {
-      key = "0B57198F6B12DE99";
-      signByDefault = true;
+      key = "~/.ssh/id_ed25519";
+      # signByDefault = true;
     };
     
     aliases = {
@@ -52,7 +53,7 @@
       a = "!git add . && git status";
       au = "!git add -u . && git status";
       aa = "!git add . && git add -u . && git status";
-      c = "commit";
+      c = "commit --signoff";
       ca = "commit --amend";
       cane = "commit --amend --no-edit";
       yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease";
@@ -133,9 +134,13 @@
     };
   };
 
+  programs.gpg.enable = true;
+  programs.jq.enable = true;
+
 
   services.gpg-agent = {
     enable = true;
+    pinentryFlavor = "tty";
     defaultCacheTtl = 1800;
     enableSshSupport = true;
   };

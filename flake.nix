@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -27,5 +27,8 @@
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
+
+      bill = self.homeConfigurations.bill.activationPackage;
+      defaultPackage.x86_64-linux = self.bill;
     };
 }

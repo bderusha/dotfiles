@@ -32,7 +32,7 @@
 #     ln -s $dir/$file ~/.$file
 # done
 
-sh <(curl -L https://nixos.org/nix/install) --no-daemon
+sh <(curl -L https://nixos.org/nix/install)
 source ~/.nix-profile/etc/profile.d/nix.sh
-nix build --no-link ~/dotfiles\#homeConfigurations.bill.activationPackage
-"$(nix path-info ~/dotfiles\#homeConfigurations.bill.activationPackage)"/activate
+nix build --no-link ~/src/dotfiles\#homeConfigurations.bill.activationPackage --extra-experimental-features nix-command --extra-experimental-features flakes
+"$(nix path-info ~/src/dotfiles\#homeConfigurations.bill.activationPackage --extra-experimental-features nix-command --extra-experimental-features flakes)"/activate
