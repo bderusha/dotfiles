@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  programs.gpg.enable = true;
   programs.home-manager.enable = true;
   programs.jq.enable = true;
   programs.direnv.enable = true;
@@ -18,6 +19,7 @@
     pinentryFlavor = "tty";
     defaultCacheTtl = 86400;
     enableSshSupport = true;
+    enableBashIntegration = true;
   };
 
 }
