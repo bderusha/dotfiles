@@ -15,20 +15,24 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations.bill = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        inherit username;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
+          ./nix-config/home.nix
+          ./nix-config/bash.nix
+          ./nix-config/git.nix
+          ./nix-config/starship.nix
         ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
 
-      bill = self.homeConfigurations.bill.activationPackage;
-      defaultPackage.x86_64-linux = self.bill;
+      "${username}" = self.homeConfigurations."${username}".activationPackage;
+      defaultPackage.x86_64-linux = self."${username}";
     };
 }
