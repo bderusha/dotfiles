@@ -19,7 +19,9 @@
         };
 
         initExtra = ''
-        ${pkgs.neofetch}/bin/neofetch
+        
+
+        ~/.nix-profile/bin/neofetch
         '';
 
         profileExtra = ''
@@ -28,9 +30,10 @@
         export NIX_PATH=$HOME/.nix-defexpr/channels
         if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
         if [ -e ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . ~/.nix-profile/etc/profile.d/hm-session-vars.sh; fi
-        if [ -e "~/.nix-profile/share/bash-completion/completions/git" ]; then
+        
+        if [ -f ~/.nix-profile/share/bash-completion/completions/git ]; then
             source ~/.nix-profile/share/bash-completion/completions/git
-            __git_complete g __git_main
+            ___git_complete g __git_main
         fi
         '';
 
