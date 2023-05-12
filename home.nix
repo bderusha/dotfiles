@@ -47,8 +47,8 @@
     userEmail = "444835+bderusha@users.noreply.github.com";
 
     signing = {
-      key = "~/.ssh/id_ed25519";
-      # signByDefault = true;
+      key = "4124CF9C4C2FD977";
+      signByDefault = true;
     };
     
     aliases = {
