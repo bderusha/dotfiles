@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
     programs.bash = {
         enable = true;
@@ -13,7 +15,7 @@
             egrep = "egrep --color=auto";
             fgrep = "fgrep --color=auto";
         };
-        
+
         initExtra = ''
         ${pkgs.neofetch}/bin/neofetch
         '';

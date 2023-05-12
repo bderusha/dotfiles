@@ -14,10 +14,10 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      username = "bill";
     in {
       homeConfigurations."${username}" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        inherit username;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
@@ -26,6 +26,13 @@
           ./nix-config/bash.nix
           ./nix-config/git.nix
           ./nix-config/starship.nix
+          {
+            home = {
+              username = "${username}";
+              homeDirectory = "/home/${username}";
+              stateVersion = "22.11";
+            };
+          }
         ];
 
         # Optionally use extraSpecialArgs

@@ -2,18 +2,16 @@
 
 {
   programs.home-manager.enable = true;
-  
-  home.username = "bill";
-  home.homeDirectory = "/home/bill";
-  home.stateVersion = "22.11";
+  programs.jq.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 
   home.packages = with pkgs; [
     cowsay
     neofetch
-    jq
   ];
 
-  home.file.".config/neofetch/config.conf".source = "./neofetch.conf";
+  home.file.".config/neofetch/config.conf".source = ./neofetch.conf;
 
   services.gpg-agent = {
     enable = true;
