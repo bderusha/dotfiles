@@ -16,6 +16,7 @@
             grep = "grep --color=auto";
             egrep = "egrep --color=auto";
             fgrep = "fgrep --color=auto";
+            ij = "flatpak run com.jetbrains.IntelliJ-IDEA-Community";
         };
 
         initExtra = ''
@@ -28,6 +29,7 @@
         export XDG_DATA_DIRS=$HOME/.nix-profile/share:$XDG_DATA_DIRS
         export PATH=$PATH:~/.nix-profile/bin
         export NIX_PATH=$HOME/.nix-defexpr/channels
+        export JAVA_HOME=/usr/bin/java
         if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
         if [ -e ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then . ~/.nix-profile/etc/profile.d/hm-session-vars.sh; fi
         
