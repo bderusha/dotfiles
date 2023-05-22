@@ -38,9 +38,9 @@ curl -L https://releases.nixos.org/nix/nix-2.13.0/install | sh -s -- --no-daemon
 chmod 555 ~/.nix-profile/etc/profile.d/nix.sh
 . ~/.nix-profile/etc/profile.d/nix.sh
 
-nix build --experimental-features 'nix-command flakes' --no-link github:bderusha/dotfiles#bill
+nix build --experimental-features 'nix-command flakes' --no-link github:bderusha/dotfiles
 
-if [ -e ~/.profile ]; then mv ~/.profile ~/.profileBACKUP; fi
-if [ -e ~/.bashrc ]; then mv ~/.bashrc ~/.bashrcBACKUP; fi
+if [ -f ~/.profile ] && [ ! -L ~/.profile ]; then mv ~/.profile ~/.profileBACKUP -b; fi
+if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then mv ~/.bashrc ~/.bashrcBACKUP -b; fi 
 
-$(nix path-info --experimental-features 'nix-command flakes' github:bderusha/dotfiles#bill)/activate
+$(nix path-info --experimental-features 'nix-command flakes' github:bderusha/dotfiles)/activate
