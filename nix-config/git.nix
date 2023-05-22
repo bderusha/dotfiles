@@ -38,7 +38,7 @@
 
         extraConfig = {
         core = {
-            editor = "code --wait";
+            editor = "vim";
             autocrlf = "input";
         };
         color = {
