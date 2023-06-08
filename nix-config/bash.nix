@@ -17,6 +17,7 @@
             egrep = "egrep --color=auto";
             fgrep = "fgrep --color=auto";
             ij = "flatpak run com.jetbrains.IntelliJ-IDEA-Community";
+            k = "kubectl";
         };
 
         initExtra = ''
