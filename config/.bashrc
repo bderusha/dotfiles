@@ -53,7 +53,7 @@ if ! shopt -oq posix; then
   fi
   if [ -f /usr/share/bash-completion/completions/git ]; then
     source /usr/share/bash-completion/completions/git
-    ___git_complete g __git_main
+    __git_complete g __git_main
   fi
 fi
 
