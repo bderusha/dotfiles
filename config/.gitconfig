@@ -1,23 +1,23 @@
 [alias]
+	s = "status"
 	a = "!git add . && git status"
-	aa = "!git add . && git add -u . && git status"
 	au = "!git add -u . && git status"
-	c = "commit"
+	aa = "!git add . && git add -u . && git status"
+	c = "commit --signoff"
 	ca = "commit --amend"
 	cane = "commit --amend --no-edit"
-	co = "checkout"
-	cp = "cherry-pick"
-	d = "diff"
+	yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease"
 	l = "log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'"
 	lg = "log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
-	po = "push origin"
-	pro = "pull --rebase origin"
-	ri = "!sh -c 'git rebase -i HEAD~$1' -"
-	s = "status"
+	d = "diff --color-words"
+	co = "checkout"
 	sw = "switch"
-	track = "update-index --no-assume-unchanged"
+	pro = "pull --rebase origin"
+	po = "push origin"
+	cp = "cherry-pick"
+	ri = "!sh -c 'git rebase -i HEAD~$1' -"
 	untrack = "update-index --assume-unchanged"
-	yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease"
+	track = "update-index --no-assume-unchanged"
 
 [branch]
 	autosetuprebase = "always"
@@ -29,20 +29,22 @@
 	status = "auto"
 	ui = "auto"
 
-# [commit]
-# 	gpgSign = true
+[commit]
+	gpgSign = true
 
 [core]
 	autocrlf = "input"
-	editor = "code --wait"
-    # editor = "vim"
-	# pager = "/nix/store/2yyqkr25dw3f18yl7xf5ndffk7950285-less-608/bin/less -XF"
+	editor = "code"
 
-# [diff]
-# 	external = "difft --color auto --background light --display side-by-side"
+[diff]
+	external = "/usr/local/bin/difft --color auto --background light --display side-by-side"
 
-# [gpg]
-# 	program = "/nix/store/2l0ghyg17lxzz37l30lvy8lcd8wssb0k-gnupg-2.3.7/bin/gpg2"
+[gpg]
+	format = "ssh"
+	program = "/usr/local/bin/gpg2"
+
+[init]
+	defaultBranch = "main"
 
 [push]
 	default = "current"

@@ -1,0 +1,62 @@
+[alias]
+        a = "!git add . && git status"
+        aa = "!git add . && git add -u . && git status"
+        au = "!git add -u . && git status"
+        c = "commit --signoff"
+        ca = "commit --amend"
+        cane = "commit --amend --no-edit"
+        co = "checkout"
+        cp = "cherry-pick"
+        d = "diff --color-words"
+        l = "log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'"
+        lg = "log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+        po = "push origin"
+        pro = "pull --rebase origin"
+        ri = "!sh -c 'git rebase -i HEAD~$1' -"
+        s = "status"
+        sw = "switch"
+        track = "update-index --no-assume-unchanged"
+        untrack = "update-index --assume-unchanged"
+        yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease"
+
+[branch]
+        autosetuprebase = "always"
+
+[color]
+        branch = "auto"
+        diff = "auto"
+        interactive = "auto"
+        status = "auto"
+        ui = "auto"
+
+[commit]
+        gpgSign = true
+
+[core]
+        autocrlf = "input"
+        editor = "vim"
+        excludesFile = "~/src/.gitignore"
+
+[diff]
+        external = "/nix/store/sij11ria1v4r7k4n1ibll4294hw4wh2q-difftastic-0.47.0/bin/difft --color auto --background light --display side-by-side"
+
+[gpg]
+        format = "ssh"
+        program = "/nix/store/j4h0z6pw8nk51swdjy5ypbbnlmba4nz0-gnupg-2.4.0/bin/gpg2"
+
+[init]
+        defaultBranch = "main"
+
+[push]
+        default = "current"
+
+[rerere]
+        enabled = "true"
+
+[tag]
+        gpgSign = true
+
+[user]
+        email = "444835+bderusha@users.noreply.github.com"
+        name = "Bill DeRusha"
+        signingKey = "~/.ssh/id_ed25519.pub"
