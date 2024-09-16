@@ -24,6 +24,6 @@ install gpg2
 install jq
 install keychain
 install neofetch
-install starship
 install vim
 
+curl -sS https://starship.rs/install.sh | sh
