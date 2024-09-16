@@ -5,9 +5,12 @@ add_newline = false
 scan_timeout = 10
 
 [cmd_duration]
-format = "[⏱ $duration]($style)"
+format = "[⏱️ $duration]($style)"
 min_time = 5000
-show_milliseconds = true
+show_milliseconds = false
+
+[container]
+disabled = true
 
 [directory]
 read_only = " "
@@ -24,16 +27,9 @@ symbol = " "
 [git_status]
 format = "[\\[$all_status$ahead_behind\\]]($style)"
 
-[kubernetes]
-format = "\\[[$symbol$context( \($namespace\))]($style)\\]"
-
 [nix_shell]
 format = "[\\[$symbol$state( \\($name\\))]($style)\\]"
-symbol = " "
-
-[nodejs]
-symbol = " "
-format = "\\[[$symbol]($style)\\]"
+symbol = " "
 
 [python]
 format = "[\\[$symbol$version]($style)\\]"
@@ -44,3 +40,6 @@ format = "[\\[as $symbol]\\]"
 
 [time]
 format = "[\\[$time]($style)\\]"
+
+[username]
+format = "[\\[$user\\]]($style)"
