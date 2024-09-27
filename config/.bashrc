@@ -36,6 +36,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias g='git'
+alias python='python3'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
