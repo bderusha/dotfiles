@@ -37,7 +37,7 @@ alias l='ls -CF'
 
 alias g='git'
 alias python='python3'
-alias cat='bat'
+alias cat='batcat'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
