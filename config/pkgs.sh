@@ -40,6 +40,7 @@ function install_difftastic {
   fi
 }
 
+install bat
 install curl
 install figlet
 install git
