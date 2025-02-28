@@ -1,6 +1,6 @@
 #!/bin/bash
 
-backupdir="$HOME/dotfiles_BACKUP"
+backupdir="$HOME/.config/dotfiles/dotfiles_BACKUP"
 
 function link_file {
     source_file=$1
