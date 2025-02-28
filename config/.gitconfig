@@ -59,4 +59,4 @@
 [user]
 	email = "444835+bderusha@users.noreply.github.com"
 	name = "Bill DeRusha"
-	signingKey = "0B57198F6B12DE99"
+	signingKey = "id_ed25519"

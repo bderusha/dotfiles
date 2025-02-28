@@ -62,9 +62,11 @@ fi
 export GPG_TTY=$(tty)
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export STARSHIP_CONFIG=~/.starship
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 eval "$(starship init bash)"
 eval "$(keychain --gpg2 --eval --quiet bderusha_rsa billderusha_microsoft_rsa)"
 
 neofetch
+
+. "$HOME/.local/bin/env"
