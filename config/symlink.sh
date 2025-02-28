@@ -24,5 +24,7 @@ function link_file {
 
 link_file .bashrc $HOME .bashrc
 link_file .gitconfig $HOME/.config/git config
+link_file gitignore $HOME/.config/git ignore
+link_file mise.config.toml $HOME/.config/mise config.toml
 link_file neofetch.conf $HOME/.config/neofetch neofetch.conf
 link_file starship.toml $HOME/.config/starship starship.toml

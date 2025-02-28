@@ -1,0 +1,12 @@
+[tools]
+bat = "latest"
+bitwarden-secrets-manager = "latest"
+difftastic = "latest"
+jq = "latest"
+node = "22"
+npm = "latest"
+python = "latest"
+starship = "latest"
+usage = "latest"
+uv = "latest"
+# vim = "latest"

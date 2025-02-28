@@ -88,21 +88,23 @@ function install_docker {
   fi
 }
 
-install bat
+# install bat
 install curl
 install figlet
 install git
 install gnupg2
-install jq
+# install jq
 install keychain
 install neofetch
-install vim
+# install vim
 
-install_starship
-install_difftastic
+# install_starship
+# install_difftastic
 install_docker
 
-install_sh uv https://astral.sh/uv/install.sh
+install_sh mise https://mise.run
+# install_sh uv https://astral.sh/uv/install.sh
+
 
 # Clean up and upgrade
 sudo apt autoremove -y
