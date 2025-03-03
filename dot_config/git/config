@@ -1,0 +1,62 @@
+[alias]
+	s = "status"
+	f = "fetch"
+	a = "!git add . && git status"
+	au = "!git add -u . && git status"
+	aa = "!git add . && git add -u . && git status"
+	c = "commit --signoff"
+	ca = "commit --amend"
+	cane = "commit --amend --no-edit"
+	yolo = "!git add . && git commit --amend --no-edit --no-verify && git push --force-with-lease"
+	l = "log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'"
+	lg = "log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative"
+	d = "diff --color-words"
+	co = "checkout"
+	sw = "switch"
+	pro = "pull --rebase origin"
+	po = "push origin"
+	cp = "cherry-pick"
+	ri = "!sh -c 'git rebase -i HEAD~$1' -"
+	untrack = "update-index --assume-unchanged"
+	track = "update-index --no-assume-unchanged"
+
+[branch]
+	autosetuprebase = "always"
+
+[color]
+	branch = "auto"
+	diff = "auto"
+	interactive = "auto"
+	status = "auto"
+	ui = "auto"
+
+[commit]
+	gpgSign = true
+
+[core]
+	autocrlf = "input"
+	editor = "code"
+
+[diff]
+	external = "/usr/local/bin/difft --color auto --background light --display side-by-side"
+
+[gpg]
+	format = "ssh"
+	program = "/usr/local/bin/gpg2"
+
+[init]
+	defaultBranch = "main"
+
+[push]
+	default = "current"
+
+[rerere]
+	enabled = "true"
+
+[tag]
+	gpgSign = true
+
+[user]
+	email = "444835+bderusha@users.noreply.github.com"
+	name = "Bill DeRusha"
+	signingKey = "~/.ssh/id_ed25519.pub"
