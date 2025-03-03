@@ -1,0 +1,12 @@
+[tools]
+bat = "latest"
+bitwarden = "latest"
+chezmoi = "latest"
+difftastic = "latest"
+jq = "latest"
+node = "latest"
+npm = "latest"
+python = "latest"
+starship = "latest"
+usage = "latest"
+uv = "latest"
